@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>MapManiaV2 Amster</title>
+<link href="map-mania-v2.css" rel="stylesheet" type="text/css">
+<script src="map-mania-v2.js"> </script>
+
+  <head>
+    <title>MapManiaV2</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+
+      #map {
+        height: 90%;
+      }
+
+      html, body {
+        height: 90%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body onload="initApplication()">
+    <h1>      Nate's favorite 8 places in the WORLD!    </h1>
+    <h2> Try and Guess my favorite 8 places in the world :)</h2>
+    <p> Getting Started: Use the mouse to scroll and pan through the maps to try and find my 8 favorite places in the world.
+      There is an Instant Win Button to win instantly and not have to play the game. There is also a reset button if you would
+      want to play again. Happy Hunting!
+    </p>
+    Score: <input id="score-id" type="text" value="" size="4" disabled><br><br>        
+    Hint: <input id="hint-id" type="text" value="" size="130" disabled><br><br>
+    <input type="reset" name="win" value="Instant Win!">
+    <input type="reset" name="reset" value="RESET">    
+
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 41.3, lng: -87.6},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbS70wW3S0QD7humnEGG851cBItDzdWJc&callback=initMap"
+    async defer></script>
+  </body>
+</html>
